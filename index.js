@@ -17,10 +17,25 @@ var T = new Twit({
   access_token_secret: accessTokenSecret,
 });
 
-T.get("search/tweets", {
-  q: "ErikLoomis since:2021-3-3",
-  count: 5,
-}).then((response) => console.log(response.data.statuses));
+// using older Promise syntax:
+// T.get("search/tweets", {
+//   q: "ErikLoomis since:2021-3-3",
+//   count: 5,
+// }).then((res, err) => console.log(res.data.statuses));
+
+// using async:
+(async () => {
+  T.get(
+    "search/tweets",
+    {
+      q: "ErikLoomis since:2021-3-3",
+      count: 5,
+    },
+    (err, data, response) => {
+      console.log(data.statuses);
+    }
+  );
+})();
 
 // (async () => {
 // //1. GET RECENT TWEETS
