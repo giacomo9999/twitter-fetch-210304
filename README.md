@@ -1,0 +1,1 @@
+Query Twitter for recent tweets by a particular user. Uses NPM Twit dependency and requires API keys etc (API_KEY, API_SECRET_KEY, ACCESS_TOKEN, and ACCESS_TOKEN_SECRET) from Twitter developers portal.
